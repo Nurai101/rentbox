@@ -1,0 +1,25 @@
+<h2>Register</h2>
+
+<input id="name" placeholder="Name">
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="register()">Register</button>
+
+<script src="js/auth.js"></script>
+
+<script>
+
+function register(){
+
+let name = document.getElementById("name").value
+let email = document.getElementById("email").value
+let password = document.getElementById("password").value
+
+registerUser(name,email,password)
+
+alert("User registered")
+
+}
+
+</script>

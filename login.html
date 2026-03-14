@@ -1,0 +1,27 @@
+<h2>Login</h2>
+
+<input id="email">
+<input id="password" type="password">
+
+<button onclick="login()">Login</button>
+
+<script src="js/auth.js"></script>
+
+<script>
+
+function login(){
+
+let email = document.getElementById("email").value
+let password = document.getElementById("password").value
+
+let user = loginUser(email,password)
+
+if(user){
+alert("Login success")
+}else{
+alert("Error")
+}
+
+}
+
+</script>
