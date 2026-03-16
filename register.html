@@ -1,15 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Регистрация</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f7f7f7;
+}
+
+header{
+background:white;
+border-bottom:1px solid #e5e5e5;
+padding:18px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+}
+
+nav{
+display:flex;
+gap:24px;
+}
+
+nav a{
+text-decoration:none;
+color:#222;
+}
+
+nav a:hover{
+color:#666;
+}
+
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:80vh;
+}
+
+.register-box{
+background:white;
+padding:40px;
+border-radius:12px;
+width:350px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.register-box h2{
+text-align:center;
+margin-bottom:25px;
+}
+
+.input-group{
+margin-bottom:15px;
+}
+
+.input-group input{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:15px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:black;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#333;
+}
+
+.login-link{
+margin-top:15px;
+text-align:center;
+}
+
+.login-link a{
+text-decoration:none;
+color:black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">RentBox</div>
+
+<nav>
+<a href="index.html">Главная</a>
+<a href="catalog.html">Каталог</a>
+<a href="favorites.html">Избранное</a>
+<a href="profile.html">Профиль</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="register-box">
+
 <h2>Register</h2>
 
+<div class="input-group">
 <input id="name" placeholder="Name">
+</div>
+
+<div class="input-group">
 <input id="email" placeholder="Email">
+</div>
+
+<div class="input-group">
 <input id="password" type="password" placeholder="Password">
+</div>
 
 <button onclick="register()">Register</button>
+
+<div class="login-link">
+<p>Уже есть аккаунт? <a href="login.html">Login</a></p>
+</div>
+
+</div>
+
+</div>
 
 <script src="js/auth.js"></script>
 
 <script>
-
+    
 function register(){
 
 let name = document.getElementById("name").value
@@ -18,8 +161,19 @@ let password = document.getElementById("password").value
 
 registerUser(name,email,password)
 
+let users = JSON.parse(localStorage.getItem("users")) || []
+let newUser = users[users.length - 1]
+
+localStorage.setItem("currentUser", JSON.stringify(newUser))
+
 alert("User registered")
+
+window.location.href = "catalog.html"
 
 }
 
+
 </script>
+
+</body>
+</html>

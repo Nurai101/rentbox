@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Главная страница</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    header {
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #666;
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px;
+      gap: 40px;
+    }
+
+    .hero-text {
+      max-width: 550px;
+    }
+
+    .hero-text h1 {
+      font-size: 54px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #111;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #333;
+    }
+
+    .btn-secondary {
+      border: 1px solid #111;
+      color: #111;
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      background: #111;
+      color: white;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .features {
+      padding: 70px 60px;
+      background: #fff;
+    }
+
+    .features h2 {
+      font-size: 34px;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: #f8f8f8;
+      border-radius: 16px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #111;
+    }
+
+    .feature-card p {
+      color: #666;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 22px;
+      color: #777;
+      background: #f1f1f1;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding: 18px 24px;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .hero {
+        flex-direction: column;
+        padding: 40px 24px;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 40px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .features {
+        padding: 50px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">RentBox</div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="favorites.html">Избранное</a>
+      <a href="profile.html">Профиль</a>
+      <a href="login.html">Вход</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Арендуй нужные вещи быстро и удобно</h1>
+      <p>
+        RentBox — это платформа, где пользователи могут сдавать вещи в аренду
+        и находить нужные товары на короткий срок без лишних затрат.
+      </p>
+      <div class="hero-buttons">
+        <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
+        <a href="register.html" class="btn btn-secondary">Создать аккаунт</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?auto=format&fit=crop&w=900&q=80" alt="RentBox">
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Почему RentBox удобен</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Быстрый поиск</h3>
+        <p>Находи нужные товары через удобный каталог и поиск по категориям.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Выгодная аренда</h3>
+        <p>Не обязательно покупать вещь, если она нужна только на короткое время.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Личный профиль</h3>
+        <p>Управляй своими товарами, избранным и арендой в одном месте.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Простой сервис</h3>
+        <p>Понятный интерфейс делает работу с платформой легкой и удобной.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 RentBox. Все права защищены.
+  </footer>
+
+</body>
+</html>

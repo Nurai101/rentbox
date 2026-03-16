@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Каталог — RentBox</title>
+  <title>Избранное — RentBox</title>
 
   <style>
     *{
@@ -64,28 +64,7 @@
       font-size:16px;
     }
 
-    .search-section{
-      padding:20px 60px;
-    }
-
-    .search-box{
-      max-width:500px;
-      background:white;
-      padding:12px;
-      border-radius:12px;
-      box-shadow:0 3px 10px rgba(0,0,0,0.05);
-    }
-
-    #search-input{
-      width:100%;
-      border:none;
-      outline:none;
-      font-size:16px;
-      padding:10px;
-      background:transparent;
-    }
-
-    .catalog{
+    .favorites-grid{
       padding:20px 60px 60px;
       display:grid;
       grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
@@ -156,11 +135,7 @@
         padding:30px 24px 10px;
       }
 
-      .search-section{
-        padding:20px 24px;
-      }
-
-      .catalog{
+      .favorites-grid{
         padding:20px 24px 40px;
       }
     }
@@ -172,38 +147,39 @@
     <div class="logo">RentBox</div>
 
     <nav>
-      <a href="index.html">Главная</a>
-      <a href="catalog.html">Каталог</a>
-      <a href="add-item.html">Добавить товар</a>
-      <a href="favorites.html">Избранное</a>
-      <a href="profile.html">Профиль</a>
-      <a href="my-orders.html">Мои аренды</a>
-      <a href="#" onclick="logout()">Выйти</a>
-
+    <a href="index.html">Главная</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="add-item.html">Добавить товар</a>
+    <a href="favorites.html">Избранное</a>
+    <a href="profile.html">Профиль</a>
+    <a href="my-orders.html">Мои аренды</a>
+    <a href="#" onclick="logout()">Выйти</a>
     </nav>
+
   </header>
 
   <section class="page-title">
-    <h1>Каталог товаров</h1>
-    <p>Найдите нужную вещь для аренды быстро и удобно</p>
+    <h1>Избранные товары</h1>
+    <p>Здесь собраны товары, которые ты добавила в избранное</p>
   </section>
 
-  <section class="search-section">
-    <div class="search-box">
-      <input type="text" id="search-input" placeholder="Поиск товара...">
-    </div>
-  </section>
-
-  <div id="catalog-container" class="catalog"></div>
-
-  <script type="module" src="./js/catalog-main.js"></script>
+  <div id="favorites-container" class="favorites-grid"></div>
 
     <script>
-        function logout() {
-        localStorage.removeItem("currentUser");
-        window.location.href = "login.html";
-        }
+    if (!localStorage.getItem("currentUser")) {
+    window.location.href = "login.html";
+    }
+
+    function logout() {
+    localStorage.removeItem("currentUser");
+    window.location.href = "login.html";
+    }
     </script>
+
+
+  <script type="module" src="./js/favorites-main.js"></script>
+
+
 
 
 </body>
